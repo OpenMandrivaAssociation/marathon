@@ -3,7 +3,7 @@
 
 Name:		marathon
 Version:	1.0.1
-Release:	%mkrel 1
+Release:	2
 Summary:	3D first-person shooter game
 License:	GPL
 Group:		Games/Arcade
@@ -48,19 +48,18 @@ find . -type f -exec %__chmod 0644 {} \;
 %build
 
 %install
-%__rm -rf %{buildroot}
-%__mkdir_p %{buildroot}%{_gamesdatadir}/AlephOne/%{name}
-%__cp -r * %{buildroot}%{_gamesdatadir}/AlephOne/%{name}/
+mkdir -p %{buildroot}%{_gamesdatadir}/AlephOne/%{name}
+cp -r * %{buildroot}%{_gamesdatadir}/AlephOne/%{name}/
 
-%__mkdir_p %{buildroot}%{_gamesbindir}
-%__cat > %{buildroot}%{_gamesbindir}/%{name} << EOF
+mkdir -p %{buildroot}%{_gamesbindir}
+cat > %{buildroot}%{_gamesbindir}/%{name} << EOF
 #!/bin/bash
 
 alephone %{_gamesdatadir}/AlephOne/%{name}/
 EOF
 
-%__mkdir_p %{buildroot}%{_datadir}/applications
-%__cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
+mkdir -p %{buildroot}%{_datadir}/applications
+cat > %{buildroot}%{_datadir}/applications/%{name}.desktop << EOF
 [Desktop Entry]
 Name=Marathon
 Comment=3D first-person shooter
@@ -71,12 +70,15 @@ Type=Application
 Categories=Game;ArcadeGame;
 EOF
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
 %defattr(644,root,root,755)
 %attr(755,root,root) %{_gamesbindir}/%{name}
 %{_gamesdatadir}/AlephOne/%{name}
 %{_datadir}/applications/%{name}.desktop
+
+
+%changelog
+* Mon Apr 02 2012 Andrey Bondrov <abondrov@mandriva.org> 1.0.1-1mdv2011.0
++ Revision: 788631
+- imported package marathon
 
