@@ -3,7 +3,7 @@
 
 Name:		marathon
 Version:	1.0.1
-Release:	2
+Release:	3
 Summary:	3D first-person shooter game
 License:	GPL
 Group:		Games/Arcade
