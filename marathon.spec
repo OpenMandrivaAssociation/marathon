@@ -2,8 +2,8 @@
 %define		oversion	20120128
 
 Name:		marathon
-Version:	1.0.1
-Release:	3
+Version:	20150620
+Release:	1
 Summary:	3D first-person shooter game
 License:	GPL
 Group:		Games/Arcade
