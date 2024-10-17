@@ -8,7 +8,7 @@ Summary:	3D first-person shooter game
 License:	GPL
 Group:		Games/Arcade
 Source0:	%{oname}-%{oversion}-Data.zip
-URL:		http://sourceforge.net/projects/marathon/
+URL:		https://sourceforge.net/projects/marathon/
 Requires:	alephone
 BuildArch:	noarch
 
